@@ -4,6 +4,6 @@
 <% Product.all.each do |x| %>
   <%= x.name %>
   <%= x.description %>
-  <%= x.price_in_cents %>
+  <%= x.formatted_price %>
   <%= link_to "edit", "/products/#{x.id}"%>
 <% end %>

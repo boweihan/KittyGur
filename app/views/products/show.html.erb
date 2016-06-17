@@ -8,7 +8,7 @@
   <%= @product.description %>
 </p>
 <p>
-  <%= @product.price_in_cents %>
+  <%= @product.formatted_price %>
 </p>
 
 <%= link_to "edit", "/products/#{@product.id}/edit" %>
