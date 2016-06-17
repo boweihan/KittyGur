@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @product = Product.all
+    @products = Product.all
   end
 
   def show
@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.find(params[:id])
+    @product = Product.new(product_params)
 
     if @product.save
       redirect_to products_url
@@ -43,7 +43,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    @product.require(:products).permit(:name, :description, :price_in_cents)
+    params.require(:product).permit(:name, :description, :price_in_cents)
   end
-
 end

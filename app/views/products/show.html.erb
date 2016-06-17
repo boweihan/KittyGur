@@ -12,5 +12,5 @@
 </p>
 
 <%= link_to "edit", "/products/#{@product.id}/edit" %>
-<%= link_to "index", @product %>
+<%= link_to "index", "/products" %>
 <%= link_to "delete", @product, method: :delete, data: {confirm: "Are you sure?"} %>
