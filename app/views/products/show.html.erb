@@ -1,0 +1,16 @@
+<h1>Products#show</h1>
+<p>Find me in app/views/products/show.html.erb</p>
+
+<p>
+  <%= @product.name %>
+</p>
+<p>
+  <%= @product.description %>
+</p>
+<p>
+  <%= @product.price_in_cents %>
+</p>
+
+<%= link_to "edit", "/products/#{@product.id}/edit" %>
+<%= link_to "index", @product %>
+<%= link_to "delete", @product, method: :delete, data: {confirm: "Are you sure?"} %>

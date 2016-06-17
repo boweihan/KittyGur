@@ -1,0 +1,9 @@
+<h1>Products#index</h1>
+<p>Find me in app/views/products/index.html.erb</p>
+
+<% Product.all.each do |x| %>
+  <%= x.name %>
+  <%= x.description %>
+  <%= x.price_in_cents %>
+  <%= link_to "edit", "/products/#{x.id}"%>
+<% end %>
