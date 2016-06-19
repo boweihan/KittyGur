@@ -1,6 +1,9 @@
 <%= render partial: 'main' %>
 
 <div class="frame">
+
+<h4>The most viral images from Bitmaker, guaranteed</h4>
+
 <% Product.all.each do |x| %>
 
   <%= link_to image_tag(x.url, class: 'image'), "products/#{x.id}" %>
