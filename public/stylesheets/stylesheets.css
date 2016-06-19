@@ -96,6 +96,7 @@ h2 {
   float: left;
   height: 100vh;
   color: white;
+  padding-top: 5vh;
 }
 
 .submit {
@@ -109,6 +110,7 @@ h2 {
     background-color: white;
     color: #404040;
   }
+
 
 /* red font for error messages */
 
@@ -155,7 +157,7 @@ h2 {
     margin: 5vh;
   }
     .showimage:hover {
-      transform: scale(1.1);
+      transform: scale(1.0);
     }
 
 .showtext {
