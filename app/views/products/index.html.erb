@@ -1,8 +1,9 @@
 <%= render partial: 'main' %>
 
+<div class="frame">
 <% Product.all.each do |x| %>
-  <%= x.name %>
-  <%= x.description %>
-  <%= x.formatted_price %>
-  <%= link_to "edit", "/products/#{x.id}"%>
+
+  <%= link_to image_tag(x.url, class: 'image'), "products/#{x.id}" %>
+
 <% end %>
+</div>
