@@ -1,61 +1,65 @@
-<p>
-  <%= @product.name %>
-</p>
-<p>
-  <%= @product.description %>
-</p>
-<p>
-  <%= @product.formatted_price %>
-</p>
-<p>
-  <%= image_tag(@product.url) %>
-</p>
+<div class="permbackground"></div>
+<div class="form">
 
-<h3>Reviews</h3>
+  <p class="showtext">
+    <strong><%= @product.name %></strong>
+  </p>
+  <p class="showtext">
+    Description: <%= @product.description %>
+  </p>
+  <p class="showtext">
+    Price: <%= @product.formatted_price %>
+  </p>
+  <p>
+    <%= image_tag(@product.url, class: "showimage") %>
+  </p>
 
- <p>Reviews for <%= @product.name %></p>
+  <h3>Reviews</h3>
 
- <% @product.reviews.each do |review| %>
-   <p>
-     <%= review.comment %>
-     <br>
-     <% if review.user != nil %>
-       <em> by <%= review.user.name %></em>
-       Added on: <%= review.created_at %>
-     <% end %>
-   </p>
- <% end %>
+   <p>Reviews for <%= @product.name %></p>
 
- <% if current_user %>
-  <h4>New Review</h4>
+   <% @product.reviews.each do |review| %>
+     <p>
+       <%= review.comment %>
+       <br>
+       <% if review.user != nil %>
+         <em> by <%= review.user.name %></em>
+         Added on: <%= review.created_at %>
+       <% end %>
+     </p>
+   <% end %>
 
-  <%= form_for([@product, @review]) do |f| %>
-    <% if @review.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+   <% if current_user %>
 
-        <ul>
-        <% @review.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
+    <%= form_for([@product, @review]) do |f| %>
+      <% if @review.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+          <ul>
+          <% @review.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :comment %><br />
+        <%= f.text_area :comment %>
+      </div>
+      <div class="actions">
+        <%= f.submit class: "submit"%>
       </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :comment %><br />
-      <%= f.text_area :comment %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+  <% else %>
+    <p>Please <%= link_to "log in", new_session_path %> to add a review.</p>
   <% end %>
 
-<% else %>
-  <p>Please <%= link_to "log in", new_session_path %> to add a review.</p>
-<% end %>
 
+  <div class="link"><%= link_to "edit", "/products/#{@product.id}/edit" %></div>
+  <div class="link"><%= link_to "index", "/products" %></div>
+  <div class="link"><%= link_to "delete", @product, method: :delete, data: {confirm: "Are you sure?"} %></div>
 
-<%= link_to "edit", "/products/#{@product.id}/edit" %>
-<%= link_to "index", "/products" %>
-<%= link_to "delete", @product, method: :delete, data: {confirm: "Are you sure?"} %>
+</div>

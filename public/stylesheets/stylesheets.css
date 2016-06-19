@@ -35,6 +35,9 @@
   background-color: #000000;
   position: fixed;
   width: 100%;
+  z-index: 9;
+  opacity: 0.5;
+  height: 30px;
 }
 
 a {
@@ -80,12 +83,17 @@ h2 {
   color: white;
 }
 
+.permbackground {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: #404040;
+}
 .form {
   width: 100%;
   text-align: center;
   position: relative;
   float: left;
-  background-color: #404040;
   height: 100vh;
   color: white;
 }
@@ -107,4 +115,49 @@ h2 {
 .error_messages {
   padding-top: 10px;
   color: red;
+}
+
+/* css for login notice */
+
+/*.loginnotice {
+  width: 100%;
+  height: 30px;
+  text-align: left;
+  position: fixed;
+  margin-top: 5px;
+  color: green;
+}*/
+
+/* CSS for show page */
+
+.link {
+  width: 16%;
+  float: left;
+  position: relative;
+  left: 20%;
+  margin: 2%;
+  margin-bottom: 20vh;
+  margin-top: 20vh;
+  background-color: #404040;
+  padding: 10px;
+  border: 3px solid white;
+  color: white;
+  font-weight: 700;
+}
+  .link:hover {
+    background-color: white;
+    color: #404040;
+  }
+
+  .showimage {
+    width: 80%;
+    border: 5px solid gray;
+    margin: 5vh;
+  }
+    .showimage:hover {
+      transform: scale(1.1);
+    }
+
+.showtext {
+  padding: 10px;
 }
