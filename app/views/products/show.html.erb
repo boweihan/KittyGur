@@ -11,7 +11,7 @@
     Price: <%= @product.formatted_price %>
   </p>
   <p>
-    <%= image_tag(@product.url, class: "showimage") %>
+    <%= image_tag("photos/#{@product.url}", class: "showimage") %>
   </p>
 
   <h3>Reviews</h3>

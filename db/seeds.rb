@@ -6,6 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Product.create(name:'Bowei', description:'learning rails', price_in_cents: 999)
-Product.create(name:'David', description:'learning rails', price_in_cents: 999)
-Product.create(name:'Ben', description:'learning rails', price_in_cents: 999)
+Dir.entries("photos").each do |seed|
+  Product.create(name:'kitty', description:'seed picture', price_in_cents:999999, url: seed)
+end
