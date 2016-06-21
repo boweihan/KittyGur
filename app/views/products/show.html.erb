@@ -30,7 +30,7 @@
    <% end %>
 
    <% if current_user %>
-
+   <!-- providing a product for a nested resource - review -->
     <%= form_for([@product, @review]) do |f| %>
       <% if @review.errors.any? %>
         <div id="error_explanation">
